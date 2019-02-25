@@ -1,0 +1,143 @@
+ 
+****************************************
+Report : design
+Design : Tile_PECore
+Version: M-2016.12-SP2
+Date   : Mon Feb 25 00:15:25 2019
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    saed32lvt_ss0p95v125c (File: /cad/synopsys_EDK3/SAED32_EDK/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p95v125c.db)
+    saed32hvt_ss0p95v125c (File: /cad/synopsys_EDK3/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32rvt_ss0p95v125c (File: /cad/synopsys_EDK3/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p95v125c.db)
+
+Local Link Library:
+
+    {saed32hvt_ss0p95v125c.db, saed32rvt_ss0p95v125c.db, saed32lvt_ss0p95v125c.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : ss0p95v125c
+    Library : saed32hvt_ss0p95v125c
+    Process :   0.99
+    Temperature : 125.00
+    Voltage :   0.95
+    Interconnect Model : best_case_tree
+
+Min Operating Conditions:
+
+
+    Operating Condition Name : ff1p16vn40c
+    Library : saed32hvt_ff1p16vn40c
+    Process :   1.01
+    Temperature : -40.00
+    Voltage :   1.16
+    Interconnect Model : worst_case_tree
+
+Wire Loading Model:
+
+    Selected automatically from the total cell area.
+
+Name           :   16000
+Location       :   saed32hvt_ss0p95v125c
+Resistance     :   0.00141
+Capacitance    :   0.000625
+Area           :   0.01
+Slope          :   108.438
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    15.10
+     2    34.61
+     3    56.42
+     4    80.84
+     5   108.20
+     6   138.79
+     7   172.92
+     8   210.91
+     9   253.07
+    10   299.71
+    11   351.13
+    12   407.64
+    13   469.57
+    14   537.20
+    15   610.87
+    16   690.86
+    17   777.51
+    18   871.11
+    19   971.97
+    20  1080.41
+
+
+Wire Loading Model for Minimum Delay Analysis:
+
+    Selected automatically from the total cell area.
+
+Name           :   16000
+Location       :   saed32hvt_ff1p16vn40c
+Resistance     :   0.001153
+Capacitance    :   0.000512
+Area           :   0.01
+Slope          :   108.438
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1    15.10
+     2    34.61
+     3    56.42
+     4    80.84
+     5   108.20
+     6   138.79
+     7   172.92
+     8   210.91
+     9   253.07
+    10   299.71
+    11   351.13
+    12   407.64
+    13   469.57
+    14   537.20
+    15   610.87
+    16   690.86
+    17   777.51
+    18   871.11
+    19   971.97
+    20  1080.41
+
+
+
+Wire Loading Model Mode: enclosed.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    None Required
+
+Design Parameters:
+
+    None specified.
+1

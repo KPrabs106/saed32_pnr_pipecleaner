@@ -1,0 +1,667 @@
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Tile_PECore
+Version: M-2016.12-SP2
+Date   : Mon Feb 25 00:15:25 2019
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+	Parasitic source    : LPE
+	Parasitic mode      : RealRC
+	Extraction mode     : MIN_MAX
+	Extraction derating : -40/25/125
+
+Information: Percent of Arnoldi-based delays = 28.31%
+
+  Startpoint: clk (clock source 'clk')
+  Endpoint: clk_out (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (fall edge)                 25.0000    25.0000
+  clk (in)                               0.0000 @  25.0000 f
+  NBUFFX16_RVT_G1IP/Y (NBUFFX8_LVT)      0.0739 @  25.0739 f
+  clk_out (out)                          0.0201 @  25.0940 f
+  data arrival time                                25.0940
+
+  clock clk (rise edge)                 50.0000    50.0000
+  clock network delay (ideal)            0.0000    50.0000
+  clock uncertainty                     -0.1000    49.9000
+  output external delay                 -5.0000    44.9000
+  data required time                               44.9000
+  -----------------------------------------------------------
+  data required time                               44.9000
+  data arrival time                               -25.0940
+  -----------------------------------------------------------
+  slack (MET)                                      19.8060
+
+
+  Startpoint: SB_T2_WEST_SB_IN_B16_0[2]
+              (input port clocked by clk)
+  Endpoint: inst1/inst0/test_opt_reg_file/data_in_reg_reg_0__15_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: in2reg
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  5.0000     5.0000 r
+  SB_T2_WEST_SB_IN_B16_0[2] (in)                        0.0000 @   5.0000 r
+  WIRE_SB_T2_WEST_SB_IN_B16/I_0[2] (MuxWrapper_0_16_35)
+                                                        0.0000     5.0000 r
+  WIRE_SB_T2_WEST_SB_IN_B16/O[2] (MuxWrapper_0_16_35)   0.0000     5.0000 r
+  CB_data0/I_11[2] (CB_data0_0)                         0.0000     5.0000 r
+  CB_data0/MUX_CB_data0/I_11[2] (MuxWrapper_20_16_2)    0.0000     5.0000 r
+  CB_data0/MUX_CB_data0/inst0/I11[2] (Mux20x16_2)       0.0000     5.0000 r
+  CB_data0/MUX_CB_data0/inst0/inst0/in_data_11[2] (muxn_U8_2)
+                                                        0.0000     5.0000 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/in_data_11[2] (muxn_U35_2)
+                                                        0.0000     5.0000 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/in_data_3[2] (muxn_U39_7)
+                                                        0.0000     5.0000 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/in_data_3[2] (muxn_U15_32)
+                                                        0.0000     5.0000 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/in_data_1[2] (muxn_U29_88)
+                                                        0.0000     5.0000 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/u_join/in1[2] (coreir_mux_width16_135)
+                                                        0.0000     5.0000 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/u_join/U6/Y (AO22X1_HVT)
+                                                        0.1397 @   5.1397 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/u_join/out[2] (coreir_mux_width16_135)
+                                                        0.0000     5.1397 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/out[2] (muxn_U29_88)
+                                                        0.0000     5.1397 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/u_join/in1[2] (coreir_mux_width16_99)
+                                                        0.0000     5.1397 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/u_join/U6/Y (AO22X2_HVT)
+                                                        0.1964 &   5.3360 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/u_join/out[2] (coreir_mux_width16_99)
+                                                        0.0000     5.3360 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/out[2] (muxn_U15_32)
+                                                        0.0000     5.3360 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/u_join/in0[2] (coreir_mux_width16_102)
+                                                        0.0000     5.3360 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/u_join/U6/Y (AO22X1_HVT)
+                                                        0.1295 &   5.4656 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/u_join/out[2] (coreir_mux_width16_102)
+                                                        0.0000     5.4656 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/out[2] (muxn_U39_7)
+                                                        0.0000     5.4656 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/u_join/in1[2] (coreir_mux_width16_174)
+                                                        0.0000     5.4656 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/u_join/U4/Y (AO22X1_HVT)
+                                                        0.1607 &   5.6263 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/u_join/out[2] (coreir_mux_width16_174)
+                                                        0.0000     5.6263 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/out[2] (muxn_U35_2)
+                                                        0.0000     5.6263 r
+  CB_data0/MUX_CB_data0/inst0/inst0/u_join/in0[2] (coreir_mux_width16_108)
+                                                        0.0000     5.6263 r
+  CB_data0/MUX_CB_data0/inst0/inst0/u_join/U4/Y (AO22X1_HVT)
+                                                        0.1664 &   5.7927 r
+  CB_data0/MUX_CB_data0/inst0/inst0/u_join/out[2] (coreir_mux_width16_108)
+                                                        0.0000     5.7927 r
+  CB_data0/MUX_CB_data0/inst0/inst0/out[2] (muxn_U8_2)
+                                                        0.0000     5.7927 r
+  CB_data0/MUX_CB_data0/inst0/O[2] (Mux20x16_2)         0.0000     5.7927 r
+  CB_data0/MUX_CB_data0/O[2] (MuxWrapper_20_16_2)       0.0000     5.7927 r
+  CB_data0/O[2] (CB_data0_0)                            0.0000     5.7927 r
+  inst1/data0[2] (PECore_0)                             0.0000     5.7927 r
+  inst1/inst0/data0[2] (test_pe_0)                      0.0000     5.7927 r
+  inst1/inst0/test_opt_reg_a/data_in[2] (test_opt_reg_DataWidth16_0)
+                                                        0.0000     5.7927 r
+  inst1/inst0/test_opt_reg_a/U10/Y (AO22X2_HVT)         0.2387 &   6.0314 r
+  inst1/inst0/test_opt_reg_a/res[2] (test_opt_reg_DataWidth16_0)
+                                                        0.0000     6.0314 r
+  inst1/inst0/test_pe_comp/op_a[2] (test_pe_comp_unq1_0)
+                                                        0.0000     6.0314 r
+  inst1/inst0/test_pe_comp/test_mult_add/IN14 (test_mult_add_DataWidth16_0)
+                                                        0.0000     6.0314 r
+  inst1/inst0/test_pe_comp/test_mult_add/U9/Y (AO22X1_HVT)
+                                                        0.1779 &   6.2093 r
+  inst1/inst0/test_pe_comp/test_mult_add/U32/Y (NAND2X2_HVT)
+                                                        0.1961 &   6.4053 f
+  inst1/inst0/test_pe_comp/test_mult_add/U17/Y (INVX0_HVT)
+                                                        0.0831 &   6.4884 r
+  inst1/inst0/test_pe_comp/test_mult_add/U34/Y (AO22X1_HVT)
+                                                        0.1185 &   6.6069 r
+  inst1/inst0/test_pe_comp/test_mult_add/U35/Y (AO221X1_HVT)
+                                                        0.1326 &   6.7395 r
+  inst1/inst0/test_pe_comp/test_mult_add/U39/Y (NAND2X0_HVT)
+                                                        0.1329 &   6.8724 f
+  inst1/inst0/test_pe_comp/test_mult_add/U40/Y (OAI21X1_HVT)
+                                                        0.1926 &   7.0650 r
+  inst1/inst0/test_pe_comp/test_mult_add/U43/CO (FADDX1_HVT)
+                                                        0.1714 &   7.2365 r
+  inst1/inst0/test_pe_comp/test_mult_add/U69/CO (FADDX1_HVT)
+                                                        0.1786 &   7.4151 r
+  inst1/inst0/test_pe_comp/test_mult_add/U82/CO (FADDX1_HVT)
+                                                        0.1495 &   7.5646 r
+  inst1/inst0/test_pe_comp/test_mult_add/U103/CO (FADDX1_HVT)
+                                                        0.1487 &   7.7134 r
+  inst1/inst0/test_pe_comp/test_mult_add/U472/CO (FADDX1_HVT)
+                                                        0.1528 &   7.8661 r
+  inst1/inst0/test_pe_comp/test_mult_add/U574/CO (FADDX1_HVT)
+                                                        0.1579 &   8.0240 r
+  inst1/inst0/test_pe_comp/test_mult_add/U491/CO (FADDX1_HVT)
+                                                        0.1511 &   8.1751 r
+  inst1/inst0/test_pe_comp/test_mult_add/U509/CO (FADDX1_HVT)
+                                                        0.1528 &   8.3279 r
+  inst1/inst0/test_pe_comp/test_mult_add/U525/CO (FADDX1_HVT)
+                                                        0.1495 &   8.4774 r
+  inst1/inst0/test_pe_comp/test_mult_add/U540/CO (FADDX1_HVT)
+                                                        0.1484 &   8.6258 r
+  inst1/inst0/test_pe_comp/test_mult_add/U554/CO (FADDX1_HVT)
+                                                        0.1523 &   8.7781 r
+  inst1/inst0/test_pe_comp/test_mult_add/U566/CO (FADDX1_HVT)
+                                                        0.1661 &   8.9441 r
+  inst1/inst0/test_pe_comp/test_mult_add/U570/CO (FADDX1_HVT)
+                                                        0.1598 &   9.1040 r
+  inst1/inst0/test_pe_comp/test_mult_add/U572/CO (FADDX1_HVT)
+                                                        0.1603 &   9.2642 r
+  inst1/inst0/test_pe_comp/test_mult_add/U489/CO (FADDX1_HVT)
+                                                        0.1583 &   9.4225 r
+  inst1/inst0/test_pe_comp/test_mult_add/U507/CO (FADDX1_HVT)
+                                                        0.1698 &   9.5923 r
+  inst1/inst0/test_pe_comp/test_mult_add/U523/CO (FADDX1_HVT)
+                                                        0.1625 &   9.7548 r
+  inst1/inst0/test_pe_comp/test_mult_add/U538/CO (FADDX1_HVT)
+                                                        0.1511 &   9.9059 r
+  inst1/inst0/test_pe_comp/test_mult_add/U552/CO (FADDX1_HVT)
+                                                        0.1517 &  10.0576 r
+  inst1/inst0/test_pe_comp/test_mult_add/U564/CO (FADDX1_HVT)
+                                                        0.1618 &  10.2194 r
+  inst1/inst0/test_pe_comp/test_mult_add/U568/CO (FADDX1_HVT)
+                                                        0.1599 &  10.3794 r
+  inst1/inst0/test_pe_comp/test_mult_add/U487/CO (FADDX1_HVT)
+                                                        0.1558 &  10.5352 r
+  inst1/inst0/test_pe_comp/test_mult_add/U505/CO (FADDX1_HVT)
+                                                        0.1581 &  10.6933 r
+  inst1/inst0/test_pe_comp/test_mult_add/U521/CO (FADDX1_HVT)
+                                                        0.1514 &  10.8447 r
+  inst1/inst0/test_pe_comp/test_mult_add/U536/CO (FADDX1_HVT)
+                                                        0.1524 &  10.9971 r
+  inst1/inst0/test_pe_comp/test_mult_add/U550/CO (FADDX1_HVT)
+                                                        0.1488 &  11.1460 r
+  inst1/inst0/test_pe_comp/test_mult_add/U557/CO (FADDX1_HVT)
+                                                        0.1531 &  11.2991 r
+  inst1/inst0/test_pe_comp/test_mult_add/U578/CO (FADDX1_HVT)
+                                                        0.1681 &  11.4673 r
+  inst1/inst0/test_pe_comp/test_mult_add/U582/S (FADDX1_HVT)
+                                                        0.2530 &  11.7203 f
+  inst1/inst0/test_pe_comp/test_mult_add/res[31] (test_mult_add_DataWidth16_0)
+                                                        0.0000    11.7203 f
+  inst1/inst0/test_pe_comp/U308/Y (AOI22X1_HVT)         0.1394 &  11.8597 r
+  inst1/inst0/test_pe_comp/U311/Y (AND3X1_HVT)          0.1054 &  11.9652 r
+  inst1/inst0/test_pe_comp/U314/Y (NAND3X0_HVT)         0.0992 &  12.0644 f
+  inst1/inst0/test_pe_comp/U315/Y (AO222X1_LVT)         0.0625 &  12.1269 f
+  inst1/inst0/test_pe_comp/U268/Y (NBUFFX2_LVT)         0.0556 &  12.1825 f
+  inst1/inst0/test_pe_comp/res[15] (test_pe_comp_unq1_0)
+                                                        0.0000    12.1825 f
+  inst1/inst0/U173/Y (AO22X1_HVT)                       0.0975 &  12.2800 f
+  inst1/inst0/test_opt_reg_file/val[15] (test_opt_reg_file_DataWidth16_0)
+                                                        0.0000    12.2800 f
+  inst1/inst0/test_opt_reg_file/U46/Y (AO22X1_HVT)      0.1090 &  12.3890 f
+  inst1/inst0/test_opt_reg_file/data_in_reg_reg_0__15_/D (SDFFARX1_HVT)
+                                                        0.0000 &  12.3890 f
+  data arrival time                                               12.3890
+
+  clock clk (rise edge)                                50.0000    50.0000
+  clock network delay (propagated)                      0.1985    50.1985
+  clock uncertainty                                    -0.1000    50.0985
+  inst1/inst0/test_opt_reg_file/data_in_reg_reg_0__15_/CLK (SDFFARX1_HVT)
+                                                        0.0000    50.0985 r
+  library setup time                                   -0.1479    49.9506
+  data required time                                              49.9506
+  --------------------------------------------------------------------------
+  data required time                                              49.9506
+  data arrival time                                              -12.3890
+  --------------------------------------------------------------------------
+  slack (MET)                                                     37.5615
+
+
+  Startpoint: CB_data0/CB_data0_sel/inst0/inst0/outReg_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: SB_T0_NORTH_SB_OUT_B1[0]
+            (output port clocked by clk)
+  Path Group: reg2out
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (propagated)                      0.1934     0.1934
+  CB_data0/CB_data0_sel/inst0/inst0/outReg_reg_0_/CLK (SDFFARX1_HVT)
+                                                        0.0000     0.1934 r
+  CB_data0/CB_data0_sel/inst0/inst0/outReg_reg_0_/Q (SDFFARX1_HVT)
+                                                        0.2622     0.4557 f
+  CB_data0/CB_data0_sel/inst0/inst0/out[0] (coreir_reg_arst_1_1_00_5_7)
+                                                        0.0000     0.4557 f
+  CB_data0/CB_data0_sel/inst0/O[0] (Register__has_ce_True__has_reset_False__has_async_reset__True__type_Bits__n_5_7)
+                                                        0.0000     0.4557 f
+  CB_data0/CB_data0_sel/O[0] (ConfigRegister_5_8_32_0_7)
+                                                        0.0000     0.4557 f
+  CB_data0/read_config_data_0_ (CB_data0_0)             0.0000     0.4557 f
+  U38/Y (NBUFFX8_HVT)                                   0.1123 @   0.5680 f
+  CB_data0/IN0 (CB_data0_0)                             0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/S[0] (MuxWrapper_20_16_2)       0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/S[0] (Mux20x16_2)         0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/in_sel[0] (muxn_U8_2)
+                                                        0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/in_sel[0] (muxn_U35_2)
+                                                        0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/in_sel[0] (muxn_U39_7)
+                                                        0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/in_sel[0] (muxn_U15_32)
+                                                        0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/U1/Y (NBUFFX4_HVT)
+                                                        0.1580 @   0.7260 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/U4/Y (INVX4_LVT)
+                                                        0.0786 &   0.8046 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/in_sel[0] (muxn_U29_88)
+                                                        0.0000     0.8046 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/u_join/sel (coreir_mux_width16_135)
+                                                        0.0000     0.8046 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/u_join/U6/Y (AO22X1_HVT)
+                                                        0.1226 &   0.9272 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/u_join/out[2] (coreir_mux_width16_135)
+                                                        0.0000     0.9272 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/out[2] (muxn_U29_88)
+                                                        0.0000     0.9272 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/u_join/in1[2] (coreir_mux_width16_99)
+                                                        0.0000     0.9272 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/u_join/U6/Y (AO22X2_HVT)
+                                                        0.1964 &   1.1235 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/u_join/out[2] (coreir_mux_width16_99)
+                                                        0.0000     1.1235 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/out[2] (muxn_U15_32)
+                                                        0.0000     1.1235 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/u_join/in0[2] (coreir_mux_width16_102)
+                                                        0.0000     1.1235 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/u_join/U6/Y (AO22X1_HVT)
+                                                        0.1295 &   1.2531 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/u_join/out[2] (coreir_mux_width16_102)
+                                                        0.0000     1.2531 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/out[2] (muxn_U39_7)
+                                                        0.0000     1.2531 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/u_join/in1[2] (coreir_mux_width16_174)
+                                                        0.0000     1.2531 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/u_join/U4/Y (AO22X1_HVT)
+                                                        0.1607 &   1.4138 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/u_join/out[2] (coreir_mux_width16_174)
+                                                        0.0000     1.4138 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/out[2] (muxn_U35_2)
+                                                        0.0000     1.4138 r
+  CB_data0/MUX_CB_data0/inst0/inst0/u_join/in0[2] (coreir_mux_width16_108)
+                                                        0.0000     1.4138 r
+  CB_data0/MUX_CB_data0/inst0/inst0/u_join/U4/Y (AO22X1_HVT)
+                                                        0.1664 &   1.5802 r
+  CB_data0/MUX_CB_data0/inst0/inst0/u_join/out[2] (coreir_mux_width16_108)
+                                                        0.0000     1.5802 r
+  CB_data0/MUX_CB_data0/inst0/inst0/out[2] (muxn_U8_2)
+                                                        0.0000     1.5802 r
+  CB_data0/MUX_CB_data0/inst0/O[2] (Mux20x16_2)         0.0000     1.5802 r
+  CB_data0/MUX_CB_data0/O[2] (MuxWrapper_20_16_2)       0.0000     1.5802 r
+  CB_data0/O[2] (CB_data0_0)                            0.0000     1.5802 r
+  inst1/data0[2] (PECore_0)                             0.0000     1.5802 r
+  inst1/inst0/data0[2] (test_pe_0)                      0.0000     1.5802 r
+  inst1/inst0/test_opt_reg_a/data_in[2] (test_opt_reg_DataWidth16_0)
+                                                        0.0000     1.5802 r
+  inst1/inst0/test_opt_reg_a/U10/Y (AO22X2_HVT)         0.2387 &   1.8189 r
+  inst1/inst0/test_opt_reg_a/res[2] (test_opt_reg_DataWidth16_0)
+                                                        0.0000     1.8189 r
+  inst1/inst0/test_pe_comp/op_a[2] (test_pe_comp_unq1_0)
+                                                        0.0000     1.8189 r
+  inst1/inst0/test_pe_comp/test_mult_add/IN14 (test_mult_add_DataWidth16_0)
+                                                        0.0000     1.8189 r
+  inst1/inst0/test_pe_comp/test_mult_add/U9/Y (AO22X1_HVT)
+                                                        0.1779 &   1.9968 r
+  inst1/inst0/test_pe_comp/test_mult_add/U32/Y (NAND2X2_HVT)
+                                                        0.1961 &   2.1928 f
+  inst1/inst0/test_pe_comp/test_mult_add/U17/Y (INVX0_HVT)
+                                                        0.0831 &   2.2759 r
+  inst1/inst0/test_pe_comp/test_mult_add/U34/Y (AO22X1_HVT)
+                                                        0.1185 &   2.3944 r
+  inst1/inst0/test_pe_comp/test_mult_add/U35/Y (AO221X1_HVT)
+                                                        0.1326 &   2.5270 r
+  inst1/inst0/test_pe_comp/test_mult_add/U39/Y (NAND2X0_HVT)
+                                                        0.1329 &   2.6599 f
+  inst1/inst0/test_pe_comp/test_mult_add/U40/Y (OAI21X1_HVT)
+                                                        0.1926 &   2.8526 r
+  inst1/inst0/test_pe_comp/test_mult_add/U43/CO (FADDX1_HVT)
+                                                        0.1714 &   3.0240 r
+  inst1/inst0/test_pe_comp/test_mult_add/U69/CO (FADDX1_HVT)
+                                                        0.1786 &   3.2026 r
+  inst1/inst0/test_pe_comp/test_mult_add/U82/CO (FADDX1_HVT)
+                                                        0.1495 &   3.3521 r
+  inst1/inst0/test_pe_comp/test_mult_add/U103/CO (FADDX1_HVT)
+                                                        0.1487 &   3.5009 r
+  inst1/inst0/test_pe_comp/test_mult_add/U472/CO (FADDX1_HVT)
+                                                        0.1528 &   3.6536 r
+  inst1/inst0/test_pe_comp/test_mult_add/U574/CO (FADDX1_HVT)
+                                                        0.1579 &   3.8115 r
+  inst1/inst0/test_pe_comp/test_mult_add/U491/CO (FADDX1_HVT)
+                                                        0.1511 &   3.9626 r
+  inst1/inst0/test_pe_comp/test_mult_add/U509/CO (FADDX1_HVT)
+                                                        0.1528 &   4.1154 r
+  inst1/inst0/test_pe_comp/test_mult_add/U525/CO (FADDX1_HVT)
+                                                        0.1495 &   4.2649 r
+  inst1/inst0/test_pe_comp/test_mult_add/U540/CO (FADDX1_HVT)
+                                                        0.1484 &   4.4133 r
+  inst1/inst0/test_pe_comp/test_mult_add/U554/CO (FADDX1_HVT)
+                                                        0.1523 &   4.5656 r
+  inst1/inst0/test_pe_comp/test_mult_add/U566/CO (FADDX1_HVT)
+                                                        0.1661 &   4.7317 r
+  inst1/inst0/test_pe_comp/test_mult_add/U570/CO (FADDX1_HVT)
+                                                        0.1598 &   4.8915 r
+  inst1/inst0/test_pe_comp/test_mult_add/U572/CO (FADDX1_HVT)
+                                                        0.1603 &   5.0517 r
+  inst1/inst0/test_pe_comp/test_mult_add/U489/CO (FADDX1_HVT)
+                                                        0.1583 &   5.2100 r
+  inst1/inst0/test_pe_comp/test_mult_add/U507/CO (FADDX1_HVT)
+                                                        0.1698 &   5.3798 r
+  inst1/inst0/test_pe_comp/test_mult_add/U523/CO (FADDX1_HVT)
+                                                        0.1625 &   5.5423 r
+  inst1/inst0/test_pe_comp/test_mult_add/U538/CO (FADDX1_HVT)
+                                                        0.1511 &   5.6934 r
+  inst1/inst0/test_pe_comp/test_mult_add/U552/CO (FADDX1_HVT)
+                                                        0.1517 &   5.8451 r
+  inst1/inst0/test_pe_comp/test_mult_add/U564/CO (FADDX1_HVT)
+                                                        0.1618 &   6.0070 r
+  inst1/inst0/test_pe_comp/test_mult_add/U568/CO (FADDX1_HVT)
+                                                        0.1599 &   6.1669 r
+  inst1/inst0/test_pe_comp/test_mult_add/U487/CO (FADDX1_HVT)
+                                                        0.1558 &   6.3227 r
+  inst1/inst0/test_pe_comp/test_mult_add/U505/CO (FADDX1_HVT)
+                                                        0.1581 &   6.4808 r
+  inst1/inst0/test_pe_comp/test_mult_add/U521/CO (FADDX1_HVT)
+                                                        0.1514 &   6.6322 r
+  inst1/inst0/test_pe_comp/test_mult_add/U536/CO (FADDX1_HVT)
+                                                        0.1524 &   6.7847 r
+  inst1/inst0/test_pe_comp/test_mult_add/U550/CO (FADDX1_HVT)
+                                                        0.1488 &   6.9335 r
+  inst1/inst0/test_pe_comp/test_mult_add/U557/CO (FADDX1_HVT)
+                                                        0.1531 &   7.0866 r
+  inst1/inst0/test_pe_comp/test_mult_add/U578/CO (FADDX1_HVT)
+                                                        0.1681 &   7.2548 r
+  inst1/inst0/test_pe_comp/test_mult_add/U582/S (FADDX1_HVT)
+                                                        0.2530 &   7.5078 f
+  inst1/inst0/test_pe_comp/test_mult_add/res[31] (test_mult_add_DataWidth16_0)
+                                                        0.0000     7.5078 f
+  inst1/inst0/test_pe_comp/U308/Y (AOI22X1_HVT)         0.1394 &   7.6473 r
+  inst1/inst0/test_pe_comp/U311/Y (AND3X1_HVT)          0.1054 &   7.7527 r
+  inst1/inst0/test_pe_comp/U314/Y (NAND3X0_HVT)         0.0992 &   7.8519 f
+  inst1/inst0/test_pe_comp/U315/Y (AO222X1_LVT)         0.0625 &   7.9144 f
+  inst1/inst0/test_pe_comp/U268/Y (NBUFFX2_LVT)         0.0556 &   7.9700 f
+  inst1/inst0/test_pe_comp/res[15] (test_pe_comp_unq1_0)
+                                                        0.0000     7.9700 f
+  inst1/inst0/U29/Y (NOR4X1_HVT)                        0.1768 &   8.1468 r
+  inst1/inst0/U33/Y (NAND4X0_HVT)                       0.2085 &   8.3553 f
+  inst1/inst0/U34/Y (INVX0_HVT)                         0.1149 &   8.4702 r
+  inst1/inst0/U35/Y (NAND2X0_HVT)                       0.1305 &   8.6007 f
+  inst1/inst0/U36/Y (INVX0_HVT)                         0.0550 &   8.6556 r
+  inst1/inst0/U47/Y (AO222X1_HVT)                       0.2077 &   8.8633 r
+  inst1/inst0/U53/Y (AO22X1_LVT)                        0.0779 &   8.9412 r
+  inst1/inst0/res_p (test_pe_0)                         0.0000     8.9412 r
+  inst1/res_p[0] (PECore_0)                             0.0000     8.9412 r
+  SB_ID0_5TRACKS_B1_res_p/res_p[0] (SB_ID0_5TRACKS_B1_res_p_0)
+                                                        0.0000     8.9412 r
+  SB_ID0_5TRACKS_B1_res_p/U5/Y (NBUFFX8_HVT)            0.0982 @   9.0395 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/I_3[0] (MuxWrapper_4_1_39)
+                                                        0.0000     9.0395 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/I3[0] (Mux4x1_39)
+                                                        0.0000     9.0395 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/in_data_3[0] (muxn_U14_69)
+                                                        0.0000     9.0395 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/muxN_1/in_data_1[0] (muxn_U25_137)
+                                                        0.0000     9.0395 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/muxN_1/u_join/in1[0] (coreir_mux_width1_202)
+                                                        0.0000     9.0395 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/muxN_1/u_join/U2/Y (AO22X1_HVT)
+                                                        0.1501 @   9.1896 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/muxN_1/u_join/out[0] (coreir_mux_width1_202)
+                                                        0.0000     9.1896 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/muxN_1/out[0] (muxn_U25_137)
+                                                        0.0000     9.1896 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/u_join/in1[0] (coreir_mux_width1_230)
+                                                        0.0000     9.1896 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/u_join/U2/Y (AO22X1_HVT)
+                                                        0.1472 &   9.3368 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/u_join/out[0] (coreir_mux_width1_230)
+                                                        0.0000     9.3368 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/inst0/out[0] (muxn_U14_69)
+                                                        0.0000     9.3368 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/inst0/O[0] (Mux4x1_39)
+                                                        0.0000     9.3368 r
+  SB_ID0_5TRACKS_B1_res_p/MUX_SB_T0_NORTH_SB_OUT_B1/O[0] (MuxWrapper_4_1_39)
+                                                        0.0000     9.3368 r
+  SB_ID0_5TRACKS_B1_res_p/SB_T0_NORTH_SB_OUT_B1[0] (SB_ID0_5TRACKS_B1_res_p_0)
+                                                        0.0000     9.3368 r
+  U361/Y (NBUFFX8_HVT)                                  0.1115 @   9.4483 r
+  SB_T0_NORTH_SB_OUT_B1[0] (out)                        0.0265 @   9.4748 r
+  data arrival time                                                9.4748
+
+  clock clk (rise edge)                                50.0000    50.0000
+  clock network delay (ideal)                           0.0000    50.0000
+  clock uncertainty                                    -0.1000    49.9000
+  output external delay                                -5.0000    44.9000
+  data required time                                              44.9000
+  --------------------------------------------------------------------------
+  data required time                                              44.9000
+  data arrival time                                               -9.4748
+  --------------------------------------------------------------------------
+  slack (MET)                                                     35.4252
+
+
+  Startpoint: CB_data0/CB_data0_sel/inst0/inst0/outReg_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: inst1/inst0/test_opt_reg_file/data_in_reg_reg_0__15_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (propagated)                      0.1934     0.1934
+  CB_data0/CB_data0_sel/inst0/inst0/outReg_reg_0_/CLK (SDFFARX1_HVT)
+                                                        0.0000     0.1934 r
+  CB_data0/CB_data0_sel/inst0/inst0/outReg_reg_0_/Q (SDFFARX1_HVT)
+                                                        0.2622     0.4557 f
+  CB_data0/CB_data0_sel/inst0/inst0/out[0] (coreir_reg_arst_1_1_00_5_7)
+                                                        0.0000     0.4557 f
+  CB_data0/CB_data0_sel/inst0/O[0] (Register__has_ce_True__has_reset_False__has_async_reset__True__type_Bits__n_5_7)
+                                                        0.0000     0.4557 f
+  CB_data0/CB_data0_sel/O[0] (ConfigRegister_5_8_32_0_7)
+                                                        0.0000     0.4557 f
+  CB_data0/read_config_data_0_ (CB_data0_0)             0.0000     0.4557 f
+  U38/Y (NBUFFX8_HVT)                                   0.1123 @   0.5680 f
+  CB_data0/IN0 (CB_data0_0)                             0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/S[0] (MuxWrapper_20_16_2)       0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/S[0] (Mux20x16_2)         0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/in_sel[0] (muxn_U8_2)
+                                                        0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/in_sel[0] (muxn_U35_2)
+                                                        0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/in_sel[0] (muxn_U39_7)
+                                                        0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/in_sel[0] (muxn_U15_32)
+                                                        0.0000     0.5680 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/U1/Y (NBUFFX4_HVT)
+                                                        0.1580 @   0.7260 f
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/U4/Y (INVX4_LVT)
+                                                        0.0786 &   0.8046 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/in_sel[0] (muxn_U29_88)
+                                                        0.0000     0.8046 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/u_join/sel (coreir_mux_width16_135)
+                                                        0.0000     0.8046 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/u_join/U6/Y (AO22X1_HVT)
+                                                        0.1226 &   0.9272 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/u_join/out[2] (coreir_mux_width16_135)
+                                                        0.0000     0.9272 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/muxN_1/out[2] (muxn_U29_88)
+                                                        0.0000     0.9272 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/u_join/in1[2] (coreir_mux_width16_99)
+                                                        0.0000     0.9272 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/u_join/U6/Y (AO22X2_HVT)
+                                                        0.1964 &   1.1235 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/u_join/out[2] (coreir_mux_width16_99)
+                                                        0.0000     1.1235 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/muxN_0/out[2] (muxn_U15_32)
+                                                        0.0000     1.1235 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/u_join/in0[2] (coreir_mux_width16_102)
+                                                        0.0000     1.1235 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/u_join/U6/Y (AO22X1_HVT)
+                                                        0.1295 &   1.2531 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/u_join/out[2] (coreir_mux_width16_102)
+                                                        0.0000     1.2531 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/muxN_1/out[2] (muxn_U39_7)
+                                                        0.0000     1.2531 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/u_join/in1[2] (coreir_mux_width16_174)
+                                                        0.0000     1.2531 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/u_join/U4/Y (AO22X1_HVT)
+                                                        0.1607 &   1.4138 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/u_join/out[2] (coreir_mux_width16_174)
+                                                        0.0000     1.4138 r
+  CB_data0/MUX_CB_data0/inst0/inst0/muxN_0/out[2] (muxn_U35_2)
+                                                        0.0000     1.4138 r
+  CB_data0/MUX_CB_data0/inst0/inst0/u_join/in0[2] (coreir_mux_width16_108)
+                                                        0.0000     1.4138 r
+  CB_data0/MUX_CB_data0/inst0/inst0/u_join/U4/Y (AO22X1_HVT)
+                                                        0.1664 &   1.5802 r
+  CB_data0/MUX_CB_data0/inst0/inst0/u_join/out[2] (coreir_mux_width16_108)
+                                                        0.0000     1.5802 r
+  CB_data0/MUX_CB_data0/inst0/inst0/out[2] (muxn_U8_2)
+                                                        0.0000     1.5802 r
+  CB_data0/MUX_CB_data0/inst0/O[2] (Mux20x16_2)         0.0000     1.5802 r
+  CB_data0/MUX_CB_data0/O[2] (MuxWrapper_20_16_2)       0.0000     1.5802 r
+  CB_data0/O[2] (CB_data0_0)                            0.0000     1.5802 r
+  inst1/data0[2] (PECore_0)                             0.0000     1.5802 r
+  inst1/inst0/data0[2] (test_pe_0)                      0.0000     1.5802 r
+  inst1/inst0/test_opt_reg_a/data_in[2] (test_opt_reg_DataWidth16_0)
+                                                        0.0000     1.5802 r
+  inst1/inst0/test_opt_reg_a/U10/Y (AO22X2_HVT)         0.2387 &   1.8189 r
+  inst1/inst0/test_opt_reg_a/res[2] (test_opt_reg_DataWidth16_0)
+                                                        0.0000     1.8189 r
+  inst1/inst0/test_pe_comp/op_a[2] (test_pe_comp_unq1_0)
+                                                        0.0000     1.8189 r
+  inst1/inst0/test_pe_comp/test_mult_add/IN14 (test_mult_add_DataWidth16_0)
+                                                        0.0000     1.8189 r
+  inst1/inst0/test_pe_comp/test_mult_add/U9/Y (AO22X1_HVT)
+                                                        0.1779 &   1.9968 r
+  inst1/inst0/test_pe_comp/test_mult_add/U32/Y (NAND2X2_HVT)
+                                                        0.1961 &   2.1928 f
+  inst1/inst0/test_pe_comp/test_mult_add/U17/Y (INVX0_HVT)
+                                                        0.0831 &   2.2759 r
+  inst1/inst0/test_pe_comp/test_mult_add/U34/Y (AO22X1_HVT)
+                                                        0.1185 &   2.3944 r
+  inst1/inst0/test_pe_comp/test_mult_add/U35/Y (AO221X1_HVT)
+                                                        0.1326 &   2.5270 r
+  inst1/inst0/test_pe_comp/test_mult_add/U39/Y (NAND2X0_HVT)
+                                                        0.1329 &   2.6599 f
+  inst1/inst0/test_pe_comp/test_mult_add/U40/Y (OAI21X1_HVT)
+                                                        0.1926 &   2.8526 r
+  inst1/inst0/test_pe_comp/test_mult_add/U43/CO (FADDX1_HVT)
+                                                        0.1714 &   3.0240 r
+  inst1/inst0/test_pe_comp/test_mult_add/U69/CO (FADDX1_HVT)
+                                                        0.1786 &   3.2026 r
+  inst1/inst0/test_pe_comp/test_mult_add/U82/CO (FADDX1_HVT)
+                                                        0.1495 &   3.3521 r
+  inst1/inst0/test_pe_comp/test_mult_add/U103/CO (FADDX1_HVT)
+                                                        0.1487 &   3.5009 r
+  inst1/inst0/test_pe_comp/test_mult_add/U472/CO (FADDX1_HVT)
+                                                        0.1528 &   3.6536 r
+  inst1/inst0/test_pe_comp/test_mult_add/U574/CO (FADDX1_HVT)
+                                                        0.1579 &   3.8115 r
+  inst1/inst0/test_pe_comp/test_mult_add/U491/CO (FADDX1_HVT)
+                                                        0.1511 &   3.9626 r
+  inst1/inst0/test_pe_comp/test_mult_add/U509/CO (FADDX1_HVT)
+                                                        0.1528 &   4.1154 r
+  inst1/inst0/test_pe_comp/test_mult_add/U525/CO (FADDX1_HVT)
+                                                        0.1495 &   4.2649 r
+  inst1/inst0/test_pe_comp/test_mult_add/U540/CO (FADDX1_HVT)
+                                                        0.1484 &   4.4133 r
+  inst1/inst0/test_pe_comp/test_mult_add/U554/CO (FADDX1_HVT)
+                                                        0.1523 &   4.5656 r
+  inst1/inst0/test_pe_comp/test_mult_add/U566/CO (FADDX1_HVT)
+                                                        0.1661 &   4.7317 r
+  inst1/inst0/test_pe_comp/test_mult_add/U570/CO (FADDX1_HVT)
+                                                        0.1598 &   4.8915 r
+  inst1/inst0/test_pe_comp/test_mult_add/U572/CO (FADDX1_HVT)
+                                                        0.1603 &   5.0517 r
+  inst1/inst0/test_pe_comp/test_mult_add/U489/CO (FADDX1_HVT)
+                                                        0.1583 &   5.2100 r
+  inst1/inst0/test_pe_comp/test_mult_add/U507/CO (FADDX1_HVT)
+                                                        0.1698 &   5.3798 r
+  inst1/inst0/test_pe_comp/test_mult_add/U523/CO (FADDX1_HVT)
+                                                        0.1625 &   5.5423 r
+  inst1/inst0/test_pe_comp/test_mult_add/U538/CO (FADDX1_HVT)
+                                                        0.1511 &   5.6934 r
+  inst1/inst0/test_pe_comp/test_mult_add/U552/CO (FADDX1_HVT)
+                                                        0.1517 &   5.8451 r
+  inst1/inst0/test_pe_comp/test_mult_add/U564/CO (FADDX1_HVT)
+                                                        0.1618 &   6.0070 r
+  inst1/inst0/test_pe_comp/test_mult_add/U568/CO (FADDX1_HVT)
+                                                        0.1599 &   6.1669 r
+  inst1/inst0/test_pe_comp/test_mult_add/U487/CO (FADDX1_HVT)
+                                                        0.1558 &   6.3227 r
+  inst1/inst0/test_pe_comp/test_mult_add/U505/CO (FADDX1_HVT)
+                                                        0.1581 &   6.4808 r
+  inst1/inst0/test_pe_comp/test_mult_add/U521/CO (FADDX1_HVT)
+                                                        0.1514 &   6.6322 r
+  inst1/inst0/test_pe_comp/test_mult_add/U536/CO (FADDX1_HVT)
+                                                        0.1524 &   6.7847 r
+  inst1/inst0/test_pe_comp/test_mult_add/U550/CO (FADDX1_HVT)
+                                                        0.1488 &   6.9335 r
+  inst1/inst0/test_pe_comp/test_mult_add/U557/CO (FADDX1_HVT)
+                                                        0.1531 &   7.0866 r
+  inst1/inst0/test_pe_comp/test_mult_add/U578/CO (FADDX1_HVT)
+                                                        0.1681 &   7.2548 r
+  inst1/inst0/test_pe_comp/test_mult_add/U582/S (FADDX1_HVT)
+                                                        0.2530 &   7.5078 f
+  inst1/inst0/test_pe_comp/test_mult_add/res[31] (test_mult_add_DataWidth16_0)
+                                                        0.0000     7.5078 f
+  inst1/inst0/test_pe_comp/U308/Y (AOI22X1_HVT)         0.1394 &   7.6473 r
+  inst1/inst0/test_pe_comp/U311/Y (AND3X1_HVT)          0.1054 &   7.7527 r
+  inst1/inst0/test_pe_comp/U314/Y (NAND3X0_HVT)         0.0992 &   7.8519 f
+  inst1/inst0/test_pe_comp/U315/Y (AO222X1_LVT)         0.0625 &   7.9144 f
+  inst1/inst0/test_pe_comp/U268/Y (NBUFFX2_LVT)         0.0556 &   7.9700 f
+  inst1/inst0/test_pe_comp/res[15] (test_pe_comp_unq1_0)
+                                                        0.0000     7.9700 f
+  inst1/inst0/U173/Y (AO22X1_HVT)                       0.0975 &   8.0675 f
+  inst1/inst0/test_opt_reg_file/val[15] (test_opt_reg_file_DataWidth16_0)
+                                                        0.0000     8.0675 f
+  inst1/inst0/test_opt_reg_file/U46/Y (AO22X1_HVT)      0.1090 &   8.1765 f
+  inst1/inst0/test_opt_reg_file/data_in_reg_reg_0__15_/D (SDFFARX1_HVT)
+                                                        0.0000 &   8.1765 f
+  data arrival time                                                8.1765
+
+  clock clk (rise edge)                                50.0000    50.0000
+  clock network delay (propagated)                      0.1985    50.1985
+  clock uncertainty                                    -0.1000    50.0985
+  inst1/inst0/test_opt_reg_file/data_in_reg_reg_0__15_/CLK (SDFFARX1_HVT)
+                                                        0.0000    50.0985 r
+  library setup time                                   -0.1479    49.9506
+  data required time                                              49.9506
+  --------------------------------------------------------------------------
+  data required time                                              49.9506
+  data arrival time                                               -8.1765
+  --------------------------------------------------------------------------
+  slack (MET)                                                     41.7740
+
+
+1
