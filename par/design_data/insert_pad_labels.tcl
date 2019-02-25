@@ -1,0 +1,11 @@
+create_text -origin [concat [lindex [get_location [get_cells -all bond_pad_vddpst_n]] 0] [expr [lindex [get_location [get_cells -all bond_pad_vddpst_n]] 1] + 84.71]] -layer TEXT_AP VDDPST
+create_text -origin [concat [lindex [get_location [get_cells -all bond_pad_vddpst_s]] 0] [expr [lindex [get_location [get_cells -all bond_pad_vddpst_s]] 1] + 0]] -layer TEXT_AP VDDPST
+create_text -origin [concat [lindex [get_location [get_cells -all bond_pad_vsspst_n]] 0] [expr [lindex [get_location [get_cells -all bond_pad_vsspst_n]] 1] + 84.71]] -layer TEXT_AP VSSPST
+create_text -origin [concat [lindex [get_location [get_cells -all bond_pad_vsspst_s]] 0] [expr [lindex [get_location [get_cells -all bond_pad_vsspst_s]] 1] + 0]] -layer TEXT_AP VSSPST
+create_text -origin [concat [lindex [get_location [get_cells -all bond_pad_vdd]] 0] [expr [lindex [get_location [get_cells -all bond_pad_vdd]] 1] + 84.71]] -layer TEXT_AP VDD
+create_text -origin [concat [lindex [get_location [get_cells -all bond_pad_vss]] 0] [expr [lindex [get_location [get_cells -all bond_pad_vss]] 1] + 0]] -layer TEXT_AP VSS
+create_text -origin [concat [lindex [get_location [get_cells -all bond_pad_clk]] 0] [expr [lindex [get_location [get_cells -all bond_pad_clk]] 1] + 0]] -layer TEXT_AP clk
+create_text -origin [concat [lindex [get_location [get_cells -all bond_pad_reset]] 0] [expr [lindex [get_location [get_cells -all bond_pad_reset]] 1] + 0]] -layer TEXT_AP reset
+create_text -origin [concat [lindex [get_location [get_cells -all bond_pad_a]] 0] [expr [lindex [get_location [get_cells -all bond_pad_a]] 1] + 0]] -layer TEXT_AP a
+create_text -origin [concat [expr [lindex [get_location [get_cells -all bond_pad_x]] 0] + 84.71] [lindex [get_location [get_cells -all bond_pad_x]] 1]] -layer TEXT_AP "x"
+create_text -origin [concat [expr [lindex [get_location [get_cells -all bond_pad_y]] 0] + 84.71] [lindex [get_location [get_cells -all bond_pad_y]] 1]] -layer TEXT_AP "y"

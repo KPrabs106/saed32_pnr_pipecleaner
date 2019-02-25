@@ -1,0 +1,24 @@
+######## CORNERS
+set_pad_physical_constraints -pad_name corner_lt -side 1
+set_pad_physical_constraints -pad_name corner_rt -side 2
+set_pad_physical_constraints -pad_name corner_rb -side 3
+set_pad_physical_constraints -pad_name corner_lb -side 4
+
+######## WEST
+set_pad_physical_constraints -pad_name pad_clk -side 1 -order 1
+set_pad_physical_constraints -pad_name pad_reset -side 1 -order 2
+set_pad_physical_constraints -pad_name pad_a -side 1 -order 3
+
+######## NORTH
+set_pad_physical_constraints -pad_name pad_vssio_n -side 2 -order 1
+set_pad_physical_constraints -pad_name pad_vdd -side 2 -order 2
+set_pad_physical_constraints -pad_name pad_vddio_n -side 2 -order 3
+
+######## SOUTH
+set_pad_physical_constraints -pad_name pad_vssio_s -side 4 -order 1
+set_pad_physical_constraints -pad_name pad_vss -side 4 -order 2
+set_pad_physical_constraints -pad_name pad_vddio_s -side 4 -order 3
+
+######## EAST
+set_pad_physical_constraints -pad_name pad_x -side 3 -order 1
+set_pad_physical_constraints -pad_name pad_y -side 3 -order 2

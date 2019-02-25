@@ -1,0 +1,69 @@
+##### set up routing #####
+source $::env(SAED32_PATH)/tech/milkyway/saed32nm_ant_1p9m.tcl
+set_route_options -same_net_notch check_and_fix
+
+set_route_zrt_detail_options    -diode_libcell_names ANTENNABWPHVT \
+                                -insert_diodes_during_routing true \
+                                -use_wide_wire_to_input_pin true \
+                                -use_wide_wire_to_output_pin true \
+                                -optimize_wire_via_effort_level high \
+                                -drc_convergence_effort_level high \
+                                -check_patchable_drc_from_fixed_shapes true \
+                                -pin_taper_mode off \
+                                -default_port_external_gate_size 0.0042 \
+                                -repair_shorts_over_macros_effort_level high
+
+set_route_zrt_common_options    -route_soft_rule_effort_level high \
+                                -post_detail_route_fix_soft_violations true \
+                                -enforce_voltage_area strict \
+                                -post_detail_route_redundant_via_insertion high \
+                                -concurrent_redundant_via_mode insert_at_high_cost \
+                                -concurrent_redundant_via_effort_level high \
+                                -eco_route_concurrent_redundant_via_mode reserve_space \
+                                -eco_route_concurrent_redundant_via_effort_level high 
+
+set_route_opt_strategy -search_repair_loops 40 -eco_route_search_repair_loops 20
+
+set_ignored_layers -min_routing_layer "M2"
+set_ignored_layers -max_routing_layer "M7"
+
+
+##### preroute instances and std cells #####
+preroute_instances -nets {VDD VSS} -ignore_macros -ignore_cover_cells -primary_routing_layer specified -specified_horizontal_layer M8 -specified_vertical_layer M9
+
+preroute_standard_cells -connect horizontal -port_filter_mode off -cell_master_filter_mode off -cell_instance_filter_mode off -voltage_area_filter_mode off -route_type {P/G Std. Cell Pin Conn}
+
+preroute_instances -nets {VDDIO VSSIO} -ignore_macros -ignore_cover_cells -primary_routing_layer specified -specified_horizontal_layer M8 -specified_vertical_layer M9
+
+##### do initial routing #####
+route_opt -initial_route_only
+
+## medium effort optimization ##
+route_opt -skip_initial_route -effort high
+
+##### perform postroute redundant via insertion #####
+#source /tsmc28/pdk/2016.09.28/TN28CLPR002S1_1_5A/N28_PRTF_Syn_v1d5a/N28_PRTF_Syn_v1d5a/PR_tech/Synopsys/DFMViaSwapTcl/n28_ICC_DFMSWAP_4X2Y1Z_HVH.tcl
+
+##### signal route verification #####
+verify_zrt_route
+derive_pg_connection -power_net $MW_POWER_NET -ground_net $MW_GROUND_NET -power_pin $MW_POWER_PORT -ground_pin $MW_GROUND_PORT
+verify_lvs
+
+##### fix shorts #####
+set_app_var routeopt_enable_aggressive_optimization true
+route_opt -incremental
+
+route_opt -incremental -only_hold_time
+
+set_app_var routeopt_drc_over_timing true
+route_opt -incremental -only_design_rule
+
+##### perform postroute redundant via insertion #####
+#source /tsmc28/pdk/2016.09.28/TN28CLPR002S1_1_5A/N28_PRTF_Syn_v1d5a/N28_PRTF_Syn_v1d5a/PR_tech/Synopsys/DFMViaSwapTcl/n28_ICC_DFMSWAP_4X2Y1Z_HVH.tcl
+
+##### signal route verification #####
+verify_zrt_route
+derive_pg_connection -power_net $MW_POWER_NET -ground_net $MW_GROUND_NET -power_pin $MW_POWER_PORT -ground_pin $MW_GROUND_PORT
+verify_lvs
+
+save_mw_cel -as chip_route.CEL
