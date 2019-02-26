@@ -1,7 +1,5 @@
 create_rectangular_rings -nets {VDD VSS} -left_offset 5 -left_segment_layer M9 -left_segment_width 2 -right_offset 5 -right_segment_layer M9 -right_segment_width 2 -bottom_offset 5 -bottom_segment_layer M8 -bottom_segment_width 2 -top_offset 5 -top_segment_layer M8 -top_segment_width 2
 
-create_pad_rings -nets {VDDIO VSSIO}
-
 # LCM of M8 and M9 pitch
 set pitch 2.432
 
