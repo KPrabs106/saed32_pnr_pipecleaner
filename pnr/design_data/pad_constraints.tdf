@@ -6,19 +6,81 @@ set_pad_physical_constraints -pad_name corner_lb -side 4
 
 ######## WEST
 set_pad_physical_constraints -pad_name pad_clk -side 1 -order 1
-set_pad_physical_constraints -pad_name pad_reset -side 1 -order 2
-set_pad_physical_constraints -pad_name pad_a -side 1 -order 3
+
+set_pad_physical_constraints -pad_name w_fill_0 -side 1 -order 2
+set_pad_physical_constraints -pad_name w_fill_1 -side 1 -order 3
+set_pad_physical_constraints -pad_name w_fill_2 -side 1 -order 4
+set_pad_physical_constraints -pad_name w_fill_3 -side 1 -order 5
+set_pad_physical_constraints -pad_name w_fill_4 -side 1 -order 6
+set_pad_physical_constraints -pad_name w_fill_5 -side 1 -order 7
+
+set_pad_physical_constraints -pad_name pad_reset -side 1 -order 8
+
+set_pad_physical_constraints -pad_name w_fill_6 -side 1 -order 9
+set_pad_physical_constraints -pad_name w_fill_7 -side 1 -order 10
+set_pad_physical_constraints -pad_name w_fill_8 -side 1 -order 11
+set_pad_physical_constraints -pad_name w_fill_9 -side 1 -order 12
+set_pad_physical_constraints -pad_name w_fill_10 -side 1 -order 13
+set_pad_physical_constraints -pad_name w_fill_11 -side 1 -order 14
+
+set_pad_physical_constraints -pad_name pad_a -side 1 -order 15
 
 ######## NORTH
 set_pad_physical_constraints -pad_name pad_vssio_n -side 2 -order 1
-set_pad_physical_constraints -pad_name pad_vdd -side 2 -order 2
-set_pad_physical_constraints -pad_name pad_vddio_n -side 2 -order 3
+
+set_pad_physical_constraints -pad_name n_fill_0 -side 2 -order 2
+set_pad_physical_constraints -pad_name n_fill_1 -side 2 -order 3
+set_pad_physical_constraints -pad_name n_fill_2 -side 2 -order 4
+set_pad_physical_constraints -pad_name n_fill_3 -side 2 -order 5
+set_pad_physical_constraints -pad_name n_fill_4 -side 2 -order 6
+set_pad_physical_constraints -pad_name n_fill_5 -side 2 -order 7
+
+set_pad_physical_constraints -pad_name pad_vdd -side 2 -order 8
+
+set_pad_physical_constraints -pad_name n_fill_6 -side 2 -order 9
+set_pad_physical_constraints -pad_name n_fill_7 -side 2 -order 10
+set_pad_physical_constraints -pad_name n_fill_8 -side 2 -order 11
+set_pad_physical_constraints -pad_name n_fill_9 -side 2 -order 12
+set_pad_physical_constraints -pad_name n_fill_10 -side 2 -order 13
+set_pad_physical_constraints -pad_name n_fill_11 -side 2 -order 14
+
+set_pad_physical_constraints -pad_name pad_vddio_n -side 2 -order 15
 
 ######## SOUTH
 set_pad_physical_constraints -pad_name pad_vssio_s -side 4 -order 1
-set_pad_physical_constraints -pad_name pad_vss -side 4 -order 2
-set_pad_physical_constraints -pad_name pad_vddio_s -side 4 -order 3
+
+set_pad_physical_constraints -pad_name s_fill_0 -side 4 -order 2
+set_pad_physical_constraints -pad_name s_fill_1 -side 4 -order 3
+set_pad_physical_constraints -pad_name s_fill_2 -side 4 -order 4
+set_pad_physical_constraints -pad_name s_fill_3 -side 4 -order 5
+set_pad_physical_constraints -pad_name s_fill_4 -side 4 -order 6
+set_pad_physical_constraints -pad_name s_fill_5 -side 4 -order 7
+
+set_pad_physical_constraints -pad_name pad_vss -side 4 -order 8
+
+set_pad_physical_constraints -pad_name s_fill_6 -side 4 -order 9
+set_pad_physical_constraints -pad_name s_fill_7 -side 4 -order 10
+set_pad_physical_constraints -pad_name s_fill_8 -side 4 -order 11
+set_pad_physical_constraints -pad_name s_fill_9 -side 4 -order 12
+set_pad_physical_constraints -pad_name s_fill_10 -side 4 -order 13
+set_pad_physical_constraints -pad_name s_fill_11 -side 4 -order 14
+set_pad_physical_constraints -pad_name pad_vddio_s -side 4 -order 15
 
 ######## EAST
 set_pad_physical_constraints -pad_name pad_x -side 3 -order 1
-set_pad_physical_constraints -pad_name pad_y -side 3 -order 2
+
+set_pad_physical_constraints -pad_name e_fill_0 -side 3 -order 2
+set_pad_physical_constraints -pad_name e_fill_1 -side 3 -order 3
+set_pad_physical_constraints -pad_name e_fill_2 -side 3 -order 4
+set_pad_physical_constraints -pad_name e_fill_3 -side 3 -order 5
+set_pad_physical_constraints -pad_name e_fill_4 -side 3 -order 6
+set_pad_physical_constraints -pad_name e_fill_5 -side 3 -order 7
+set_pad_physical_constraints -pad_name e_fill_12 -side 3 -order 8
+set_pad_physical_constraints -pad_name e_fill_6 -side 3 -order 9
+set_pad_physical_constraints -pad_name e_fill_7 -side 3 -order 10
+set_pad_physical_constraints -pad_name e_fill_8 -side 3 -order 11
+set_pad_physical_constraints -pad_name e_fill_9 -side 3 -order 12
+set_pad_physical_constraints -pad_name e_fill_10 -side 3 -order 13
+set_pad_physical_constraints -pad_name e_fill_11 -side 3 -order 14
+
+set_pad_physical_constraints -pad_name pad_y -side 3 -order 15
