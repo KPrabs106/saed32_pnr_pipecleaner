@@ -4,8 +4,8 @@ set chip_height     1200
 
 ##### pad ring dimensions #####
 # with pads
-set io_width        110
-set io_height       110
+set io_width        300
+set io_height       300
 
 ##### io2core margin #####
 set left_io2core    40
