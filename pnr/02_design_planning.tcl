@@ -26,7 +26,7 @@ derive_pg_connection -power_net VDDIO -power_pin VDDIO -ground_net VSSIO -ground
 
 ##### preroute instances and std cells #####
 preroute_instances -nets {VDD VSS} -ignore_macros -ignore_cover_cells -primary_routing_layer specified -specified_horizontal_layer M8 -specified_vertical_layer M9
-preroute_instances -nets {VDDIO VSSIO} -specified_horizontal_layer M8 -specified_vertical_layer -M9
+preroute_instances -nets {VDDIO VSSIO} -specified_horizontal_layer M8 -specified_vertical_layer M9
 preroute_standard_cells -connect horizontal -port_filter_mode off -cell_master_filter_mode off -cell_instance_filter_mode off -voltage_area_filter_mode off -route_type {P/G Std. Cell Pin Conn}
 
 ##### fp place incr #####
