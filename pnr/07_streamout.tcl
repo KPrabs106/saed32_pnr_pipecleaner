@@ -3,7 +3,7 @@ source ./design_data/insert_pad_labels.tcl
 
 change_names -rules verilog -hierarchy
 ##### write out verilog netlist with pg/VDD/VSS #####
-write_verilog -no_corner_pad_cells -no_pad_filler_cells -no_core_filler_cells -force_no_output_references {TAPCELLBWP BOUNDARY_LEFTBWP BOUNDARY_RIGHTBWP PAD60GU PRCUTA_G} -force_output_references {ANTENNABWPHVT} -diode_ports -pg -supply_statement none ./chip_pwr.v
+write_verilog -no_corner_pad_cells -no_pad_filler_cells -no_core_filler_cells -force_no_output_references {TAPCELLBWP BOUNDARY_LEFTBWP BOUNDARY_RIGHTBWP PAD60GU PRCUTA_G} -force_output_references {ANTENNALVT ANTENNARVT ANTENNAHVT} -diode_ports -pg -supply_statement none ./chip_pwr.v
 ##### write out verilog netlist without pg (default) #####
 write_verilog -no_pg_pin_only_cells -no_corner_pad_cells -no_pad_filler_cells -no_core_filler_cells -force_no_output_references {TAPCELLBWP BOUNDARY_LEFTBWP BOUNDARY_RIGHTBWP PAD60GU PRCUTA_G ANTENNABWPHVT} -supply_statement none ./chip.v
 

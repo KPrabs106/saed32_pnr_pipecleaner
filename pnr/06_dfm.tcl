@@ -1,5 +1,5 @@
 ##### add std cell filler and decap #####
-#insert_stdcell_filler -no_1x -cell_with_metal "SHFILL128_RVT SHFILL64_RVT SHFILL3_RVT SHFILL2_RVT SHFILL1_RVT" -connect_to_power {VDD} -connect_to_ground {VSS} -respect_keepout -metal_filler_coverage_area 500000 -respect_overlap
+insert_stdcell_filler -no_1x -cell_with_metal "SHFILL128_RVT SHFILL64_RVT SHFILL3_RVT SHFILL2_RVT SHFILL1_RVT" -connect_to_power {VDD} -connect_to_ground {VSS} -respect_keepout -metal_filler_coverage_area 500000 -respect_overlap
 
 #-cell_with_metal "OD18DCAP64BWP OD18DCAP32BWP OD18DCAP16BWP" -connect_to_power {VDD} -connect_to_ground {VSS} -respect_keepout -metal_filler_coverage_area 500000 -respect_overlap
 
@@ -9,11 +9,11 @@ route_opt -incremental -size_only
 #source /tsmc28/pdk/2016.09.28/TN28CLPR002S1_1_5A/N28_PRTF_Syn_v1d5a/N28_PRTF_Syn_v1d5a/PR_tech/Synopsys/DFMViaSwapTcl/n28_ICC_DFMSWAP_4X2Y1Z_HVH.tcl
 
 ##### add std cell filler #####
-#insert_stdcell_filler -no_1x -cell_with_metal "SHFILL128_RVT SHFILL64_RVT SHFILL3_RVT SHFILL2_RVT SHFILL1_RVT" -connect_to_power {VDD} -connect_to_ground {VSS} -respect_keepout -respect_overlap
+insert_stdcell_filler -no_1x -cell_with_metal "SHFILL128_RVT SHFILL64_RVT SHFILL3_RVT SHFILL2_RVT SHFILL1_RVT" -connect_to_power {VDD} -connect_to_ground {VSS} -respect_keepout -respect_overlap
 #insert_stdcell_filler -no_1x -cell_without_metal "FILL64BWPHVT FILL32BWPHVT FILL16BWPHVT FILL8BWPHVT FILL4BWPHVT FILL3BWPHVT FILL2BWPHVT" -connect_to_power {VDD} -connect_to_ground {VSS} -respect_keepout -respect_overlap
 
 ##### add well filler #####
-#insert_well_filler -layer NWELL -fill_gaps_smaller_than 15
+insert_well_filler -layer NWELL -fill_gaps_smaller_than 15
 #insert_well_filler -layer NP -fill_gaps_smaller_than 15
 #insert_well_filler -layer PP -fill_gaps_smaller_than 15
 #insert_well_filler -layer VTH_N
