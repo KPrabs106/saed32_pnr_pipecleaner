@@ -15,7 +15,7 @@ for {set i 0} {$i<$num_fill} {incr i} {
 
 ######## NORTH
 create_cell {pad_vssio_n} IOVSS_NS
-create_cell {pad_vdd} CVDDVSS_NS 
+create_cell {pad_vdd} VDD_NS 
 create_cell {pad_vddio_n} IOVDD_NS
 for {set i 0} {$i<$num_fill} {incr i} {
     create_cell n_fill_$i FILLER
@@ -23,7 +23,7 @@ for {set i 0} {$i<$num_fill} {incr i} {
 
 ######## SOUTH
 create_cell {pad_vssio_s} IOVSS_NS
-create_cell {pad_vss} CVDDVSS_NS
+create_cell {pad_vss} VSS_NS
 create_cell {pad_vddio_s} IOVDD_NS
 for {set i 0} {$i<$num_fill} {incr i} {
     create_cell s_fill_$i FILLER
