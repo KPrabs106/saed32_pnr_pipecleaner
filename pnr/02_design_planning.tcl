@@ -22,12 +22,37 @@ source ./powerplan.tcl
 ##### fp place incr #####
 create_fp_placement -incremental all
 derive_pg_connection -power_net $MW_POWER_NET -power_pin $MW_POWER_PORT -ground_net $MW_GROUND_NET -ground_pin $MW_GROUND_PORT
-derive_pg_connection -power_net VDDIO -power_pin VDDIO -ground_net VSSIO -ground_pin VSSIO
+derive_pg_connection -power_net VDD -power_pin VDD -ground_net VSS -ground_pin VSS
+#derive_pg_connection -power_net VDDIO -power_pin VDDIO -ground_net VSSIO -ground_pin VSSIO
 
 ##### preroute instances and std cells #####
 preroute_instances -nets {VDD VSS} -ignore_macros -ignore_cover_cells -primary_routing_layer specified -specified_horizontal_layer M8 -specified_vertical_layer M9
-preroute_instances -nets {VDDIO VSSIO} -specified_horizontal_layer M8 -specified_vertical_layer M9
-preroute_standard_cells -connect horizontal -port_filter_mode off -cell_master_filter_mode off -cell_instance_filter_mode off -voltage_area_filter_mode off -route_type {P/G Std. Cell Pin Conn}
+# Connect power pads to ring
+#preroute_instances -ignore_macros -ignore_cover_cells \
+#-connect_instances specified \
+#-cells [get_cells -all {pad_vdd}] \
+#-select_net_by_type specified \
+#-nets {VDD} \
+#-primary_routing_layer pin
+#
+#preroute_instances -ignore_macros -ignore_cover_cells \
+#-connect_instances specified \
+#-cells [get_cells -all {pad_vss}] \
+#-select_net_by_type specified \
+#-nets {VSS} \
+#-primary_routing_layer pin
+
+insert_stdcell_filler -no_1x -cell_without_metal "SHFILL128_RVT SHFILL64_RVT SHFILL3_RVT SHFILL2_RVT SHFILL1_RVT" -connect_to_power {VDD} -connect_to_ground {VSS}
+
+derive_pg_connection -power_net VDD -power_pin VDD -ground_net VSS -ground_pin VSS
+preroute_standard_cells -nets {VDD VSS} -connect horizontal -port_filter_mode off -cell_master_filter_mode off -cell_instance_filter_mode off -voltage_area_filter_mode off -route_type {P/G Std. Cell Pin Conn}
+
+verify_pg_nets
+
+remove_stdcell_filler -stdcell
+
+verify_pg_nets
+
 
 ##### fp place incr #####
 create_fp_placement -incremental all
