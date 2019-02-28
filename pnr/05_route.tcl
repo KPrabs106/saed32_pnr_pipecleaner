@@ -2,7 +2,7 @@
 source $::env(SAED32_PATH)/tech/milkyway/saed32nm_ant_1p9m.tcl
 set_route_options -same_net_notch check_and_fix
 
-set_route_zrt_detail_options    -diode_libcell_names ANTENNABWPHVT \
+set_route_zrt_detail_options    -diode_libcell_names ANTENNA_HVT \
                                 -insert_diodes_during_routing true \
                                 -use_wide_wire_to_input_pin true \
                                 -use_wide_wire_to_output_pin true \
@@ -26,11 +26,6 @@ set_route_opt_strategy -search_repair_loops 40 -eco_route_search_repair_loops 20
 
 set_ignored_layers -min_routing_layer "M2"
 set_ignored_layers -max_routing_layer "M7"
-
-
-##### preroute instances and std cells #####
-preroute_instances -nets {VDD VSS} -ignore_macros -ignore_cover_cells -primary_routing_layer specified -specified_horizontal_layer M8 -specified_vertical_layer M9
-
 
 
 ##### do initial routing #####

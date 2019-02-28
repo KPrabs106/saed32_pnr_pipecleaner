@@ -3,7 +3,8 @@ set chip_width      1200
 set chip_height     1200
 
 ##### pad ring dimensions #####
-# with pads
+# Don't change these! These are based on the dimensions
+# of the pads in the library we're using
 set io_width        300
 set io_height       300
 
