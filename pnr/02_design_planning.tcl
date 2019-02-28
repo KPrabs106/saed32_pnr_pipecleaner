@@ -27,20 +27,6 @@ derive_pg_connection -power_net VDD -power_pin VDD -ground_net VSS -ground_pin V
 
 ##### preroute instances and std cells #####
 preroute_instances -nets {VDD VSS} -ignore_macros -ignore_cover_cells -primary_routing_layer specified -specified_horizontal_layer M8 -specified_vertical_layer M9
-# Connect power pads to ring
-#preroute_instances -ignore_macros -ignore_cover_cells \
-#-connect_instances specified \
-#-cells [get_cells -all {pad_vdd}] \
-#-select_net_by_type specified \
-#-nets {VDD} \
-#-primary_routing_layer pin
-#
-#preroute_instances -ignore_macros -ignore_cover_cells \
-#-connect_instances specified \
-#-cells [get_cells -all {pad_vss}] \
-#-select_net_by_type specified \
-#-nets {VSS} \
-#-primary_routing_layer pin
 
 insert_stdcell_filler -no_1x -cell_without_metal "SHFILL128_RVT SHFILL64_RVT SHFILL3_RVT SHFILL2_RVT SHFILL1_RVT" -connect_to_power {VDD} -connect_to_ground {VSS}
 
