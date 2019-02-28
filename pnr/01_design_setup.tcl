@@ -11,7 +11,7 @@ open_mw_lib $mw_design_library
 set_tlu_plus_files -max_tluplus $TLUPLUS_MAX_FILE -min_tluplus $TLUPLUS_MIN_FILE -tech2itf_map $MAP_FILE
 
 ##### import design #####
-import_designs -format verilog -top chip [concat ../rtl/chip.v ../syn/top.v]
+import_designs -format verilog -top top [concat ../rtl/chip.v ../syn/top.v]
 uniquify_fp_mw_cel
 
 set_fix_multiple_port_nets -outputs -exclude_clock_network
