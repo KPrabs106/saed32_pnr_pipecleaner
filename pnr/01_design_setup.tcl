@@ -1,5 +1,14 @@
 ##### library setup #####
-source ../syn/saed32_setup.tcl
+source ./saed32_setup.tcl
+
+#Create Milkyway Physical Library
+set mw_design_library $par_dir/${design_name}_mwlib
+
+file delete -force $mw_design_library
+
+create_mw_lib $mw_design_library -technology $TECH_FILE -mw_reference_library $MW_REFERENCE_LIB_DIRS
+open_mw_lib $mw_design_library
+set_tlu_plus_files -max_tluplus $TLUPLUS_MAX_FILE -min_tluplus $TLUPLUS_MIN_FILE -tech2itf_map $MAP_FILE
 
 ##### import design #####
 import_designs -format verilog -top chip [concat ../rtl/chip.v ../syn/top.v]
