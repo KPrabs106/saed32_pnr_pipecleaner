@@ -237,10 +237,3 @@ set_app_var link_library "* $target_library $ADDITIONAL_LINK_LIB_FILES $syntheti
 foreach {max_library min_library} $MIN_LIBRARY_FILES {
     set_min_library $max_library -min_version $min_library
 }
-set mw_design_library $par_dir/${design_name}_mwlib
-
-file delete -force $mw_design_library
-
-create_mw_lib $mw_design_library -technology $TECH_FILE -mw_reference_library $MW_REFERENCE_LIB_DIRS
-open_mw_lib $mw_design_library
-set_tlu_plus_files -max_tluplus $TLUPLUS_MAX_FILE -min_tluplus $TLUPLUS_MIN_FILE -tech2itf_map $MAP_FILE
