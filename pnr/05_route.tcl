@@ -25,7 +25,7 @@ set_route_zrt_common_options    -route_soft_rule_effort_level high \
 set_route_opt_strategy -search_repair_loops 40 -eco_route_search_repair_loops 20
 
 set_ignored_layers -min_routing_layer "M2"
-set_ignored_layers -max_routing_layer "M7"
+set_ignored_layers -max_routing_layer "M8"
 
 
 ##### do initial routing #####
