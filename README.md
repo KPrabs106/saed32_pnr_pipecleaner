@@ -1,7 +1,12 @@
-# EE272_flow
-Sample Back End Flow for EE 272 designed for the Synopsys SAED32nm EDK.
+# saed32_pnr_pipecleaner
+Sample place and route flow for EE 272 designed for the Synopsys SAED32nm EDK.
 
 The EDK is located at /cad/synopsys_EDK3/SAED32_EDK.
+
+# Directories
+rtl - You should put your synthesized gate-level netlist here.
+syn - Synthesis flow used to synthesize pipecleaner design. Don't worry about this.
+pnr - Place and route directory. Essentially everything you do will be here.
 
 
 # Environment setup
