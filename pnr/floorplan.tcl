@@ -38,10 +38,3 @@ create_floorplan \
     -top_io2core $top_io2core \
     -bottom_io2core $bottom_io2core
 
-##### insert pad filler #####
-#insert_pad_filler -cell "PFILLER20_G PFILLER10_G PFILLER5_G PFILLER1_G PFILLER05_G PFILLER0005_G"
-
-##### create bond pads #####
-#source ./createNplace_bondpads.tcl
-#createNplace_bondpads -inline_pad_ref_name PAD60GU
-#set_dont_touch_placement [get_cells -all bond_*]
