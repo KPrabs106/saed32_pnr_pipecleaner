@@ -107,7 +107,7 @@ $stdcell_library(db,lvt,$slow_corner_pvt) \
 #
 # PLACE ADDITIONAL SRAM .DB FILES HERE
 set ADDITIONAL_LINK_LIB_FILES "$sram_library(db,$slow_corner_pvt) \
-                               $io_wb_library(db,$slow_corner_pvt) \
+                               $io_wb_library(db,$slow_corner_pvt)"
                                 
 
 # Associate libraries with min libraries
