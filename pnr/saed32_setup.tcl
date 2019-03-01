@@ -46,14 +46,6 @@ ${SAED32_EDK_LIB_PATH}/sram_lp/db_nldm/ \
 ${SAED32_EDK_LIB_PATH}/stdcell_hvt/db_nldm \
 ${SAED32_EDK_LIB_PATH}/stdcell_lvt/db_nldm \
 ${SAED32_EDK_LIB_PATH}/stdcell_rvt/db_nldm \
-/home/ajcars/mc/single/128x16/mc_work/char_results/lib_ccs \
-/home/ajcars/mc/single/128x32/mc_work/char_results/lib_ccs \
-/home/ajcars/mc/single/128x64/mc_work/char_results/lib_ccs \
-/home/ajcars/mc/single/128x128/mc_work/char_results/lib_ccs \
-/home/ajcars/mc/dual/128x16/mc_work/char_results/lib_ccs/ \
-/home/ajcars/mc/dual/128x32/mc_work/char_results/lib_ccs/ \
-/home/ajcars/mc/dual/128x64/mc_work/char_results/lib_ccs/ \
-/home/ajcars/mc/dual/128x128/mc_work/char_results/lib_ccs/ \
 "
 
 set MW_REFERENCE_LIB_DIRS  [list \
@@ -100,17 +92,6 @@ set io_wb_library(db,ss0p95v125c) [list saed32io_wb_ss0p95v125c_2p25v.db]
 set io_wb_library(db,ss0p95v25c)  [list saed32io_wb_ss0p95v25c_2p25v.db]
 set io_wb_library(db,ss0p95vn40c) [list saed32io_wb_ss0p95vn40c_2p25v.db]
 
-set io_fc_library(db,ff1p16v125c) [list saed32io_fc_ff1p16v125c_2p75v.db]
-set io_fc_library(db,ff1p16v25c)  [list saed32io_fc_ff1p16v25c_2p75v.db]
-set io_fc_library(db,ff1p16vn40c) [list saed32io_fc_ff1p16vn40c_2p75v.db]
-
-set io_fc_library(db,tt1p05v125c) [list saed32io_fc_tt1p05v125c_2p5v.db]
-set io_fc_library(db,tt1p05v25c)  [list saed32io_fc_tt1p05v25c_2p5v.db]
-set io_fc_library(db,tt1p05vn40c) [list saed32io_fc_tt1p05vn40c_2p5v.db]
-
-set io_fc_library(db,ss0p95v125c) [list saed32io_fc_ss0p95v125c_2p25v.db]
-set io_fc_library(db,ss0p95v25c)  [list saed32io_fc_ss0p95v25c_2p25v.db]
-set io_fc_library(db,ss0p95vn40c) [list saed32io_fc_ss0p95vn40c_2p25v.db]
 
 #########
 # Target technology logical libraries
@@ -126,16 +107,7 @@ $stdcell_library(db,lvt,$slow_corner_pvt) \
 #
 # PLACE ADDITIONAL SRAM .DB FILES HERE
 set ADDITIONAL_LINK_LIB_FILES "$sram_library(db,$slow_corner_pvt) \
-                               SRAM128x16single_32_max_0d95_125_ccs.db \ 
-                               SRAM128x32single_32_max_0d95_125_ccs.db \
-                               SRAM128x64single_32_max_0d95_125_ccs.db \
-                               SRAM128x128single_32_max_0d95_125_ccs.db \
-                               SRAM128x16dual_32_max_0d95_125_ccs.db \ 
-                               SRAM128x32dual_32_max_0d95_125_ccs.db \
-                               SRAM128x64dual_32_max_0d95_125_ccs.db \
-                               SRAM128x128dual_32_max_0d95_125_ccs.db \
                                $io_wb_library(db,$slow_corner_pvt) \
-                               $io_fc_library(db,$slow_corner_pvt)"
                                 
 
 # Associate libraries with min libraries
@@ -157,10 +129,6 @@ foreach max_lib [concat $io_wb_library(db,$slow_corner_pvt)] \
     lappend MIN_LIBRARY_FILES $max_lib $min_lib
 }
 
-foreach max_lib [concat $io_fc_library(db,$slow_corner_pvt)] \
-        min_lib [concat $io_fc_library(db,$fast_corner_pvt)] {
-    lappend MIN_LIBRARY_FILES $max_lib $min_lib
-}
 ########
 # Tech files and metal stack extraction models
 ########
