@@ -3,22 +3,22 @@ source ./design_data/insert_pad_labels.tcl
 
 change_names -rules verilog -hierarchy
 ##### write out verilog netlist with pg/VDD/VSS #####
-write_verilog -no_corner_pad_cells -no_pad_filler_cells -no_core_filler_cells -force_no_output_references {TAPCELLBWP BOUNDARY_LEFTBWP BOUNDARY_RIGHTBWP PAD60GU PRCUTA_G} -force_output_references {ANTENNALVT ANTENNARVT ANTENNAHVT} -diode_ports -pg -supply_statement none ./chip_pwr.v
+write_verilog -no_corner_pad_cells -no_pad_filler_cells -no_core_filler_cells -force_no_output_references {TAPCELLBWP BOUNDARY_LEFTBWP BOUNDARY_RIGHTBWP PAD60GU PRCUTA_G} -force_output_references {ANTENNALVT ANTENNARVT ANTENNAHVT} -diode_ports -pg -supply_statement none "./${design_name}_pwr.v"
 ##### write out verilog netlist without pg (default) #####
-write_verilog -no_pg_pin_only_cells -no_corner_pad_cells -no_pad_filler_cells -no_core_filler_cells -force_no_output_references {TAPCELLBWP BOUNDARY_LEFTBWP BOUNDARY_RIGHTBWP PAD60GU PRCUTA_G ANTENNABWPHVT} -supply_statement none ./chip.v
+write_verilog -no_pg_pin_only_cells -no_corner_pad_cells -no_pad_filler_cells -no_core_filler_cells -force_no_output_references {TAPCELLBWP BOUNDARY_LEFTBWP BOUNDARY_RIGHTBWP PAD60GU PRCUTA_G ANTENNABWPHVT} -supply_statement none "./${design_name}.v"
 
 ##### extraction #####
 extract_rc -coupling_cap -routed_nets_only -incremental
-write_parasitics -output ./chip.spef -format SPEF
+write_parasitics -output "./${design_name}.spef" -format SPEF
 
 ##### output files #####
-write_sdf -significant_digits 6 ./chip.sdf
-write_sdc ./chip.sdc
+write_sdf -significant_digits 6 "./${design_name}.sdf"
+write_sdc "./${design_name}.sdc"
 
 ##### set milkyway CEL #####
-save_mw_cel
+save_mw_cel -as "${design_name}.CEL"
 close_mw_cel
-open_mw_cel -readonly chip.CEL
+open_mw_cel -readonly "${design_name}.CEL"
 
 set_write_stream_options \
     -child_depth 99 \
@@ -26,7 +26,7 @@ set_write_stream_options \
         -keep_data_type \
         -map_layer /cad/synopsys/SAED_PDK32nm/techfiles/saed32nm_1p9m_gdsout.map
 
-write_stream -cells chip -format gds ./chip.gds
+write_stream -cells "${design_name}" -format gds "./${design_name}.gds"
 
 ##### generate reports #####
 file mkdir ./reports

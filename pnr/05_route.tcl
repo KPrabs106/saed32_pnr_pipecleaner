@@ -59,4 +59,4 @@ verify_zrt_route
 derive_pg_connection -power_net $MW_POWER_NET -ground_net $MW_GROUND_NET -power_pin $MW_POWER_PORT -ground_pin $MW_GROUND_PORT
 verify_lvs
 
-save_mw_cel -as chip_route.CEL
+save_mw_cel -as ${design_name}_route.CEL

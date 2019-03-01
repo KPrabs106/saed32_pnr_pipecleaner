@@ -1,7 +1,7 @@
 ##### create I/O pads and set locations #####
-source ./design_data/insert_pads.tcl
-read_pin_pad_physical_constraints ./design_data/pad_constraints.tdf
-check_mv_design
+#source ./design_data/insert_pads.tcl
+#read_pin_pad_physical_constraints ./design_data/pad_constraints.tdf
+#check_mv_design
 
 ##### floorplan and fp placement #####
 source ./floorplan.tcl
