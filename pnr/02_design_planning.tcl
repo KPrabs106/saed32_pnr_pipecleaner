@@ -26,7 +26,8 @@ derive_pg_connection -power_net VDD -power_pin VDD -ground_net VSS -ground_pin V
 #derive_pg_connection -power_net VDDIO -power_pin VDDIO -ground_net VSSIO -ground_pin VSSIO
 
 ##### preroute instances and std cells #####
-preroute_instances -nets {VDD VSS} -ignore_macros -ignore_cover_cells -primary_routing_layer specified -specified_horizontal_layer M8 -specified_vertical_layer M9
+# This command routes VDD and VSS to all to any instances which aren't standard cells (SRAMs, for example)
+preroute_instances -nets {VDD VSS} -ignore_cover_cells -primary_routing_layer pin
 
 insert_stdcell_filler -no_1x -cell_without_metal "SHFILL128_RVT SHFILL64_RVT SHFILL3_RVT SHFILL2_RVT SHFILL1_RVT" -connect_to_power {VDD} -connect_to_ground {VSS}
 
