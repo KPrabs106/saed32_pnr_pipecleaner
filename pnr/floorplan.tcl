@@ -38,3 +38,18 @@ create_floorplan \
     -top_io2core $top_io2core \
     -bottom_io2core $bottom_io2core
 
+# This creates a collection of all of the macros in your design. You may wish you use this 
+# if you want to set constraints on your macros or iterate over them to manually place them.
+# Type "man collections" into icc_shell for more info on working with Synopsys collections
+set all_macros [get_cells -hierarchical -all * -filter (is_hard_macro==true || is_soft_macro==true)]
+
+# Example of auto macro constraints
+set_fp_placement_strategy -macros_on_edge on -auto_grouping high -minimize_auto_grouping_channels true -pin_routing_aware true
+set_fp_placement_strategy -sliver_size 20
+
+# Example of explicit macro placement
+# Note that the x and y values you provide should be on the standard cell grid for this
+# technology. (i.e. x should be a multiple of 0.152 and y should be a multiple of 1.672)
+# 
+# set macro [get_cells *path to cell*]
+# set_cell_location -fixed -coordinates {x y}
