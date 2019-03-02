@@ -41,7 +41,7 @@ create_floorplan \
 # This creates a collection of all of the macros in your design. You may wish you use this 
 # if you want to set constraints on your macros or iterate over them to manually place them.
 # Type "man collections" into icc_shell for more info on working with Synopsys collections
-set all_macros [get_cells -hierarchical -all * -filter (is_hard_macro==true || is_soft_macro==true)]
+set all_macros [get_cells -hierarchical -all * -filter (is_hard_macro==true)]
 
 # Example of auto macro constraints
 set_fp_placement_strategy -macros_on_edge on -auto_grouping high -minimize_auto_grouping_channels true -pin_routing_aware true
