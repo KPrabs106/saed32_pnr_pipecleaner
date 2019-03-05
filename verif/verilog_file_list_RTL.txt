@@ -1,0 +1,2 @@
+../verif/tb.v
+../rtl/top.v

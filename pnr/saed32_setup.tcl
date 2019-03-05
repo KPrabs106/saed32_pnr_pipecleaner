@@ -111,7 +111,7 @@ set ADDITIONAL_LINK_LIB_FILES "$sram_library(db,$slow_corner_pvt) \
                                 
 
 # Associate libraries with min libraries
-# This should be a list of max-min library paris "max1 min1 max2 min2 ..."
+# This should be a list of max-min library pairs "max1 min1 max2 min2 ..."
 set MIN_LIBRARY_FILES ""
 foreach vt {hvt lvt rvt} {
     foreach max_lib [concat $stdcell_library(db,$vt,$slow_corner_pvt)] \

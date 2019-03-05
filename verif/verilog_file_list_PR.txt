@@ -1,0 +1,4 @@
+../verif/tb.v
+../pnr/top.v
+/cad/synopsys_EDK3/SAED32_EDK/lib/stdcell_hvt/verilog/saed32nm_hvt.v
+/cad/synopsys_EDK3/SAED32_EDK/lib/stdcell_lvt/verilog/saed32nm_lvt.v

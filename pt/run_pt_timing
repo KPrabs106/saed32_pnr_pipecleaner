@@ -1,0 +1,3 @@
+module load pts
+mkdir -p primetime_reports
+pt_shell -file pt_timing.tcl

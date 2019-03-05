@@ -1,0 +1,4 @@
+module load pts
+vcd2saif -input ../verif/chip_PR.vpd -output ../verif/chip_PR.saif   
+mkdir -p primetime_power_reports
+pt_shell -f ./pt_power.tcl
